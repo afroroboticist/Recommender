@@ -1,4 +1,4 @@
-Flask-WTF==0.10.3
+Flask-WTF==0.14.2
 numpy==1.17.0
 pandas==1.0.0
 sklearn==0.0
