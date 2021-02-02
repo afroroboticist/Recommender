@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimit(100000000)
+sys.setrecursionlimit(999999999999999999)
 
 import pandas as pd 
 import numpy as np 
