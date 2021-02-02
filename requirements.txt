@@ -1,5 +1,3 @@
-category-encoders==*
-click==*
 cloudpickle==*
 cycler==*
 Flask==*
@@ -12,9 +10,6 @@ Pillow==*
 scikit-learn==*
 scipy==*
 sklearn==*
-statsmodels==*
-tqdm==*
 Werkzeug==*
 WTForms==*
-xgboost==*
 
