@@ -1,15 +1,11 @@
-cloudpickle==*
-cycler==*
-Flask==*
-Flask-WTF==*
-itsdangerous==*
-Jinja2==*
-numpy==*
-pandas==*
-Pillow==*
-scikit-learn==*
-scipy==*
-sklearn==*
-Werkzeug==*
-WTForms==*
+category-encoders==2.2.2
+cloudpickle==1.6.0
+Flask==1.1.2
+Flask-WTF==0.14.3
+Jinja2==2.11.3
+numpy==1.20.0
+pandas==1.2.1
+sklearn==0.0
+Werkzeug==1.0.1
+WTForms==2.3.3
 
