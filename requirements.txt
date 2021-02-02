@@ -1,5 +1,5 @@
 category-encoders==2.2.2
-cloudpickle==1.6.0
+cloudpickle==0.12.3
 Flask==0.14.1
 Flask-WTF==2.9.5
 Jinja2==1.19.5
