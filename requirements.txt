@@ -1,10 +1,12 @@
-cloudpickle==1.6.0
-Flask==0.14.1
 Flask-WTF==2.9.5
-Jinja2==1.19.5
 numpy==1.20.0
 pandas==1.2.1
 sklearn==0.0
-Werkzeug==1.0.1
 WTForms==2.3.3
-
+Click==7.0
+Flask==1.1.1
+gunicorn==19.9.0
+itsdangerous==1.1.0
+Jinja2==2.10.1
+MarkupSafe==1.1.1
+Werkzeug==0.15.6
