@@ -1,4 +1,4 @@
-category-encoders==2.2.2
+category-encoders==1.0.0
 cloudpickle==0.12.3
 Flask==0.14.1
 Flask-WTF==2.9.5
