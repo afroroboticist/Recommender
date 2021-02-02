@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class='jumbotron' align="center">
+	<img src='static/IMG/collage.jpeg' alt='MOVIE REEL' style='width:1940px;height:500px;' class='img-fluid'/>
+	<form method='POST'>
+	<h2 align="center"> LAURENCE'S MOVIE RECOMMENDER </h2>
+	<h4 align="center"> Based on your movie choice of {{data[0]}} Here are a few movies you may like: </h4>
+	<li align="left">{{data[1][0]}}</li>
+	<li align="left">{{data[1][1]}}</li>
+	<li align="left">{{data[1][2]}}</li>
+	<li align="left">{{data[1][3]}}</li>
+	<li align="left">{{data[1][4]}}</li>
+	<li align="left">{{data[1][5]}}</li>
+	<li align="left">{{data[1][6]}}</li>
+	<li align="left">{{data[1][7]}}</li>
+	<li align="left">{{data[1][8]}}</li>
+	<li align="left">{{data[1][9]}}</li>
+	<br>
+	<br>
+	<img src={{data[2]}} alt='MODEL PERFORMANCE PLOT'/>
+	</form>
+</div>
+
+
+{% endblock %}

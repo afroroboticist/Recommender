@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div align='center'>
+<h3> SELECT A MOVIE OF YOUR CHOICE </h3>
+</div>
+<br>
+<form method='POST'>
+	<div class='container'>
+		{{form.hidden_tag()}}
+		<p> PICK MOVIE </p>
+		<div class='row mb-3'>
+		{{form.movie_choice.label(class='col-form-label-lg')}}{{form.movie_choice}}
+		<br><br>
+		<h1> </h1>
+		<br>
+		<h1> </h1>
+		
+		<p> PICK MODEL TO RUN YOUR RECOMMENDATIONS WITH </p>
+		{{form.model_choice.label}}{{form.model_choice}}
+		</div>
+		{{form.submit}}
+	</div>
+</form>
+
+
+{% endblock  %}
