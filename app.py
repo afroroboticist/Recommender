@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(100000000)
+
 import pandas as pd 
 import numpy as np 
 import pickle
