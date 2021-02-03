@@ -1,6 +1,10 @@
 import sys
 sys.setrecursionlimit(500)
-
+#########################################################
+# Set the recursion limit because code kept maxing out  #
+# when running on Heroku. Error was a recursion limit   #
+# This fixed the problem. PLEASE DO NOT TOUCH           #
+#########################################################
 import pandas as pd 
 import numpy as np 
 import pickle
@@ -23,29 +27,51 @@ from sklearn.model_selection import cross_val_score
 from category_encoders import OrdinalEncoder, OneHotEncoder
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'mysecretkey'
+# Set manually or include secret key in your environment variables #
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")#'mysecretkey'
 
+# The list length variable determines how many movies +/- across your index should be returned #
 LIST_LENGTH = 5
+# Definition of pre trained models #
 model_names = ['linear_regressor.mod','random_forest.mod','gradient_boost.mod']
 MODELS = ['Linear Regressor','Random Forest Regressor','Gradient Boost Regressor']
 
 build_models = []
 
+# Download pretrained models and store them up in a list #
 for models in model_names:
 	model = pickle.load(open('static/'+models, 'rb'))
 	build_models.append(model)
+# Imported our data pipeline used in build_model.py #
 PIPELINE = pickle.load(open('static/data_pipeline.lin','rb'))
 
 CHOICES = []
 
+# Read pre-wrangled data set #
+
 df = pd.read_csv('static/movie_train.csv')
+
+# Catalogue refers to a list of original movies with their untouched ratings to pick #
+# Movies similar to our own movies from #
+
 catalogue = pd.read_csv('static/catalogue_final.csv')
+#########################################################
+# This function is responsible for taking an observation#
+# And converting it using the data pipeline into a      #
+# form that can be understood by the model. Basically   #
+# We're replicating what we did during training here    #
+#########################################################
 
 def prepare_data(data, model=None):
 	X_prepd = PIPELINE.transform(data)
 	print(X_prepd)
 	return X_prepd
 
+##################################################################
+# The place score function is responsible for taking a predicted #
+# Rating of a movie and searching through movie ratings in the   #
+# Catalogue to find what movies best match the predicted rating  #
+##################################################################
 
 
 def place_score(catalogue, value):
@@ -54,6 +80,11 @@ def place_score(catalogue, value):
       return idx
     elif idx == (len(catalogue)-2): return None
   return None
+
+################################################
+# All app routes are for the 3 major web pages #
+################################################
+
 
 @app.route('/')
 def index():
